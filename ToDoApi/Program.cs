@@ -52,11 +52,11 @@ app.UseCors("AllowAll"); // הוסף את השורה הזו
 
 //middleware להדליק את הסווגר בסביבת הפיתוח
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 //root שמים את הסווגר בניתוב של ה
 if (builder.Environment.IsDevelopment())
@@ -114,6 +114,7 @@ app.MapGet("/items", async (ToDoDbContext dbContext) =>
     var items = await dbContext.Items.ToListAsync(); // שלוף את כל הפריטים
     return Results.Ok(items); // החזר את הפריטים
 });
+app.MapGet("/",  () =>"ToDo server is running!😀");
 
 
 app.Run();
