@@ -117,4 +117,4 @@ app.MapGet("/items", async (ToDoDbContext dbContext) =>
 app.MapGet("/",  () =>"ToDo server is running!😀");
 
 
-app.Run();
+app.Run("http://localhost:5001"); // שינוי הפורט כאן
