@@ -3,3 +3,5 @@ bin/
 .vscode/
 ToDoApi/obj/
 ToDoApi/bin
+
+.fake
