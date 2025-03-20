@@ -117,6 +117,7 @@ app.MapGet("/items", async (ToDoDbContext dbContext) =>
 app.MapGet("/",  () =>"ToDo server is running!😀");
 
 
-app.Run("http://locvar port = Environment.GetEnvironmentVariable("PORT") ?? "5001"; // ברירת מחדל לפורט 5001
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5001"; // ברירת מחדל לפורט 5001
+app.Run($"http://0.0.0.0:{port}");
 
 
