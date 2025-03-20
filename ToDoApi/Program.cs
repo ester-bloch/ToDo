@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // הוסף את ה-mysql
 builder.Services.AddDbContext<ToDoDbContext>
 (options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("tododb2"),
+    options.UseMySql(builder.Configuration.GetConnectionString("tododbWEB"),
      new MySqlServerVersion(new Version(8, 0, 25))));
 
 
