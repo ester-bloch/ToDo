@@ -17,9 +17,14 @@ public partial class ToDoDbContext : DbContext
     }
 
     public virtual DbSet<Item> Items { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("name=tododb2", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.41-mysql"));
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseMySql("server=localhost;database=tododb2;user=root;password=Ee1357913579##;",
+                Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.41-mysql"));
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
