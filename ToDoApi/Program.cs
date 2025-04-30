@@ -8,9 +8,7 @@ var connectionString = builder.Configuration.GetConnectionString("tododbWEB");
 var connectionString2 = builder.Configuration.GetConnectionString("tododb2");
 builder.Services.AddDbContext<ToDoDbContext>(
     options =>
-    options.UseMySql(
-    connectionString
-    , new MySqlServerVersion(new Version(8, 0, 25))));
+    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 25))));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
